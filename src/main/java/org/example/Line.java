@@ -25,10 +25,6 @@ public class Line {
         this.name = name;
     }
 
-    public void test(){
-        System.out.println(name);
-    }
-
     public String getName() {
         return name;
     }
