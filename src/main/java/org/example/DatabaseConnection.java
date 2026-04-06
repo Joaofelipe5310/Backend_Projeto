@@ -6,9 +6,9 @@ import org.hibernate.cfg.Configuration;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.example.DBcon.Hibernate.factory;
+import static org.example.DatabaseConnection.Hibernate.factory;
 
-public class DBcon {
+public class DatabaseConnection {
 
     public static class Hibernate {
 
