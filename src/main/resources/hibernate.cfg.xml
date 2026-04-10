@@ -20,9 +20,9 @@
 
         <!-- Mapping files or annotated classes -->
         <!-- Use <mapping resource="Event.hbm.xml"/> for XML mapping files -->
-        <mapping class="org.example.Line"/>
-        <mapping class="org.example.Category"/>
-        <mapping class="org.example.Model"/>
+        <mapping class="API.DTO.LineDTO"/>
+        <mapping class="API.DTO.CategoryDTO"/>
+        <mapping class="API.DTO.ModelDTO"/>
 
     </session-factory>
 </hibernate-configuration>

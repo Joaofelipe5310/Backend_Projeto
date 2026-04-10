@@ -1,0 +1,36 @@
+package API.service;
+
+import API.DTO.CategoryDTO;
+import API.DTO.ModelDTO;
+import API.repository.CategoryRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+public class CategoryService {
+
+    private final CategoryRepository repository;
+
+    public CategoryService(CategoryRepository repository) {
+        this.repository = repository;
+    }
+
+    public List<CategoryDTO> getCatDTO(){
+
+        return repository.findAll().
+                stream().
+                map(u -> new CategoryDTO(
+                u.getId(),
+                u.getName(),
+                u.getModel().
+                        stream().
+                        map(m -> new ModelDTO(
+                                m.getId(),
+                                m.getName()
+                        )).collect(Collectors.toList())
+                ))
+                .collect(Collectors.toList());
+    }
+}

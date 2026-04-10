@@ -1,5 +1,4 @@
-package org.example;
-
+package API.entity;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +11,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @JoinColumn(name = "name")
+    @Column(name = "name")
     private String name;
 
     @ManyToOne
@@ -49,7 +48,7 @@ public class Category {
         this.line = line;
     }
 
-    public Object getLine() {
+    public Line getLine() {
         return line;
     }
 
@@ -61,4 +60,3 @@ public class Category {
         this.model = model;
     }
 }
-

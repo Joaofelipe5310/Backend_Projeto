@@ -1,18 +1,18 @@
-package org.example;
-
+package API.entity;
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table (name = "Linha")
-public class Line {
+public class Line implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @JoinColumn(name = "name")
+    @Column(name = "name")
     private String name;
 
     @OneToMany(mappedBy = "line",cascade = CascadeType.ALL)
@@ -53,5 +53,3 @@ public class Line {
         this.cat = cat;
     }
 }
-
-

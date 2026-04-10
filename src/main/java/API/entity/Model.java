@@ -1,9 +1,5 @@
-package org.example;
-
+package API.entity;
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-
 
 @Entity
 @Table(name = "Modelo")
@@ -13,7 +9,7 @@ public class Model {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @JoinColumn(name = "name")
+    @Column(name = "name")
     private String name;
 
     @ManyToOne
