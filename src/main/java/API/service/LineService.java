@@ -3,6 +3,7 @@ package API.service;
 import API.DTO.CategoryDTO;
 import API.DTO.LineDTO;
 import API.DTO.ModelDTO;
+import API.entity.Line;
 import API.repository.LineRepository;
 import org.springframework.stereotype.Service;
 
