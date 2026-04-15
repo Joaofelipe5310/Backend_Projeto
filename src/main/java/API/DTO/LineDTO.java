@@ -1,9 +1,7 @@
 package API.DTO;
 
-import API.entity.Category;
-
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collector;
 
 public class LineDTO {
 
@@ -11,7 +9,11 @@ public class LineDTO {
     private String name;
     private List<CategoryDTO> cat;
 
-    public LineDTO(int  id, String name, List<CategoryDTO> cat) {
+    public LineDTO(){
+
+    }
+
+    public LineDTO(int  id, String name,  List<CategoryDTO> cat) {
         this.id = id;
         this.name = name;
         this.cat = cat;
@@ -22,5 +24,11 @@ public class LineDTO {
 
     public String getName() { return name; }
 
+    @Override
+    public String toString() {
+        return name;
+    }
+
     public List<CategoryDTO> getCat() { return cat;}
+
 }

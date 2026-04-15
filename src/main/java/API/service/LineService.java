@@ -3,7 +3,6 @@ package API.service;
 import API.DTO.CategoryDTO;
 import API.DTO.LineDTO;
 import API.DTO.ModelDTO;
-import API.entity.Line;
 import API.repository.LineRepository;
 import org.springframework.stereotype.Service;
 
@@ -30,16 +29,14 @@ public class LineService {
                 .map(l -> new LineDTO(
                         l.getId(),
                         l.getName(),
-                        l.getCat().stream()
-                                .map(c -> new CategoryDTO(
-                                        c.getId(),
-                                        c.getName(),
-                                        c.getModel().stream().
-                                                map(m -> new ModelDTO(
-                                                        m.getId(),
-                                                        m.getName())).collect(Collectors.toList())
-                                ))
-                                .collect(Collectors.toList())
+                        l.getCat().stream().map(c -> new CategoryDTO(
+                                c.getId(),
+                                c.getName(),
+                                c.getModel().stream().map(m -> new ModelDTO(
+                                        m.getId(),
+                                        m.getName()
+                                )).collect(Collectors.toList())
+                        )).collect(Collectors.toList())
                 ))
                 .collect(Collectors.toList());
     }

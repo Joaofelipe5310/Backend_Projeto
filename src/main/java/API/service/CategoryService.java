@@ -24,11 +24,9 @@ public class CategoryService {
                 map(u -> new CategoryDTO(
                 u.getId(),
                 u.getName(),
-                u.getModel().
-                        stream().
-                        map(m -> new ModelDTO(
-                                m.getId(),
-                                m.getName()
+                        u.getModel().stream().map(model -> new ModelDTO(
+                                model.getId(),
+                                model.getName()
                         )).collect(Collectors.toList())
                 ))
                 .collect(Collectors.toList());

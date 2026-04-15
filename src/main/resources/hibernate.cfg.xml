@@ -23,6 +23,5 @@
         <mapping class="API.DTO.LineDTO"/>
         <mapping class="API.DTO.CategoryDTO"/>
         <mapping class="API.DTO.ModelDTO"/>
-
     </session-factory>
 </hibernate-configuration>
