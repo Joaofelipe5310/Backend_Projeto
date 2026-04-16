@@ -14,7 +14,7 @@ public class Model {
 
     @ManyToOne
     @JoinColumn(name = "Categoria_id")
-    private Category cat;
+    private Category categories;
 
     public int getId() {
         return id;
@@ -30,11 +30,11 @@ public class Model {
         this.name = name;
     }
 
-    public Category getCat() {
-        return cat;
+    public Category getCategories() {
+        return categories;
     }
 
-    public void setCat(Category cat) {
-        this.cat = cat;
+    public void setCat(Category categories) {
+        this.categories = categories;
     }
 }

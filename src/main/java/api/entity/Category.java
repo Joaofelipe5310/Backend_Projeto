@@ -18,7 +18,7 @@ public class Category {
     @JoinColumn(name = "Linha_id")
     private Line line;
 
-    @OneToMany(mappedBy = "cat",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "categories",cascade = CascadeType.ALL)
     private List<Model> model = new ArrayList<>();
 
     public Category() {}

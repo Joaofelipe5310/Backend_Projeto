@@ -6,16 +6,16 @@ public class LineDTO {
 
     private int id;
     private String name;
-    private List<CategoryDTO> cat;
+    private List<CategoryDTO> categories;
 
     public LineDTO(){
 
     }
 
-    public LineDTO(int  id, String name,  List<CategoryDTO> cat) {
+    public LineDTO(int  id, String name,  List<CategoryDTO> categories) {
         this.id = id;
         this.name = name;
-        this.cat = cat;
+        this.categories = categories;
 
     }
 
@@ -28,6 +28,6 @@ public class LineDTO {
         return name;
     }
 
-    public List<CategoryDTO> getCat() { return cat;}
+    public List<CategoryDTO> getCategories() { return categories;}
 
 }

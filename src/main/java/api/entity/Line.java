@@ -16,7 +16,7 @@ public class Line implements Serializable {
     private String name;
 
     @OneToMany(mappedBy = "line",cascade = CascadeType.ALL)
-    private List<Category> cat = new ArrayList<>();
+    private List<Category> categories = new ArrayList<>();
 
     public Line() {}
 
@@ -46,11 +46,11 @@ public class Line implements Serializable {
         return name;
     }
 
-    public List<Category> getCat() {
-        return cat;
+    public List<Category> getCategories() {
+        return categories;
     }
 
-    public void setCat(List<Category> cat) {
-        this.cat = cat;
+    public void setCat(List<Category> categories) {
+        this.categories = categories;
     }
 }

@@ -4,7 +4,6 @@ import api.dto.CategoryDTO;
 import api.dto.ModelDTO;
 import api.repository.CategoryRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,7 +16,7 @@ public class CategoryService {
         this.repository = repository;
     }
 
-    public List<CategoryDTO> getCatDTO(){
+    public List<CategoryDTO> getCategoriesDTO(){
 
         return repository.findAll().
                 stream().

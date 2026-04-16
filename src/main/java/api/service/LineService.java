@@ -5,7 +5,6 @@ import api.dto.LineDTO;
 import api.dto.ModelDTO;
 import api.repository.LineRepository;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,7 +27,7 @@ public class LineService {
                 .map(l -> new LineDTO(
                         l.getId(),
                         l.getName(),
-                        l.getCat().stream().map(c -> new CategoryDTO(
+                        l.getCategories().stream().map(c -> new CategoryDTO(
                                 c.getId(),
                                 c.getName(),
                                 c.getModel().stream().map(m -> new ModelDTO(
