@@ -1,9 +1,9 @@
-package API.Controller;
+package api.Controller;
 
-import API.DTO.LineDTO;
+import api.dto.LineDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import API.service.LineService;
+import api.service.LineService;
 
 import java.util.List;
 

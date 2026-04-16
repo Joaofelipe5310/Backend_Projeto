@@ -1,4 +1,4 @@
-package API.entity;
+package api.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;

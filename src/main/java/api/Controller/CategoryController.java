@@ -1,9 +1,9 @@
-package API.Controller;
+package api.Controller;
 
-import API.DTO.CategoryDTO;
+import api.dto.CategoryDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import API.service.CategoryService;
+import api.service.CategoryService;
 
 import java.util.List;
 

@@ -1,9 +1,9 @@
-package API.Controller;
+package api.Controller;
 
-import API.DTO.ModelDTO;
+import api.dto.ModelDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import API.service.ModelService;
+import api.service.ModelService;
 
 import java.util.List;
 

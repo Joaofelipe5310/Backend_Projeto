@@ -1,8 +1,8 @@
-package API.service;
+package api.service;
 
-import API.DTO.CategoryDTO;
-import API.DTO.ModelDTO;
-import API.repository.CategoryRepository;
+import api.dto.CategoryDTO;
+import api.dto.ModelDTO;
+import api.repository.CategoryRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

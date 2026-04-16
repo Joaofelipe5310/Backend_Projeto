@@ -1,9 +1,9 @@
-package API.service;
+package api.service;
 
-import API.DTO.CategoryDTO;
-import API.DTO.LineDTO;
-import API.DTO.ModelDTO;
-import API.repository.LineRepository;
+import api.dto.CategoryDTO;
+import api.dto.LineDTO;
+import api.dto.ModelDTO;
+import api.repository.LineRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;

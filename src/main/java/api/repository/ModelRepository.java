@@ -1,7 +1,7 @@
-package API.repository;
+package api.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import API.entity.Model;
+import api.entity.Model;
 
 public interface ModelRepository extends JpaRepository<Model, Integer> {
 }

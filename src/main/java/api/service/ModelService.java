@@ -1,7 +1,7 @@
-package API.service;
+package api.service;
 
-import API.DTO.ModelDTO;
-import API.repository.ModelRepository;
+import api.dto.ModelDTO;
+import api.repository.ModelRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
