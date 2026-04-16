@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
 @Service
 public class ModelService {
 
-
     private final ModelRepository repository;
 
     public ModelService(ModelRepository repository) {
@@ -22,6 +21,8 @@ public class ModelService {
 
         return repository.findAll().stream().map(u -> new ModelDTO(
                 u.getId(),
-                u.getName())).collect(Collectors.toList());
+                u.getName()
+        ))
+          .collect(Collectors.toList());
     }
 }

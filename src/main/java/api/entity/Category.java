@@ -48,9 +48,7 @@ public class Category {
         this.line = line;
     }
 
-    public Line getLine() {
-        return line;
-    }
+    public Line getLine() {return line;}
 
     public List<Model> getModel() {
         return model;

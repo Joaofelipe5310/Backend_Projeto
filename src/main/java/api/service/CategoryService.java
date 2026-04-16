@@ -27,8 +27,9 @@ public class CategoryService {
                         u.getModel().stream().map(model -> new ModelDTO(
                                 model.getId(),
                                 model.getName()
-                        )).collect(Collectors.toList())
+                        ))
+                          .collect(Collectors.toList())
                 ))
-                .collect(Collectors.toList());
+                  .collect(Collectors.toList());
     }
 }

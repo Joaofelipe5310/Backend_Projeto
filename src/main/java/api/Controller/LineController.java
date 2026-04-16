@@ -4,7 +4,6 @@ import api.dto.LineDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import api.service.LineService;
-
 import java.util.List;
 
 @RestController

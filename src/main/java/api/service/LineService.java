@@ -13,7 +13,6 @@ import java.util.stream.Collectors;
 @Service
 public class LineService {
 
-
     private final LineRepository repository;
 
     public LineService(LineRepository repository) {
@@ -35,9 +34,11 @@ public class LineService {
                                 c.getModel().stream().map(m -> new ModelDTO(
                                         m.getId(),
                                         m.getName()
-                                )).collect(Collectors.toList())
-                        )).collect(Collectors.toList())
+                                ))
+                                  .collect(Collectors.toList())
+                        ))
+                          .collect(Collectors.toList())
                 ))
-                .collect(Collectors.toList());
+                  .collect(Collectors.toList());
     }
 }

@@ -4,7 +4,6 @@ import api.dto.ModelDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import api.service.ModelService;
-
 import java.util.List;
 
 @RestController
