@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DatabaseConnection {
     public static void main(String[] args) {
 
+        System.out.println("teste testando testado testeiro");
         SpringApplication.run(DatabaseConnection.class, args);
     }
 }
