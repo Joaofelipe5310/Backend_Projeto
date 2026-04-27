@@ -1,0 +1,14 @@
+stages:
+  - build
+
+build_develop:
+  stage: build
+  tags:
+    - javafx
+  script:
+    - mvn clean install
+  only:
+    - feature/project_four
+  artifacts:
+    paths:
+      - target/Backend_Projeto1-1.0-SNAPSHOT.jar
