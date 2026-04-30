@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection properties -->
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/postgres</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">Eletra134625!</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+        <!-- Other properties -->
+        <property name="show_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- Mapping files or annotated classes -->
+        <!-- Use <mapping resource="Event.hbm.xml"/> for XML mapping files -->
+        <mapping class="org.example.Line"/>
+        <mapping class="org.example.Category"/>
+        <mapping class="org.example.Model"/>
+
+    </session-factory>
+</hibernate-configuration>
