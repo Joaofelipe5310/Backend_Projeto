@@ -10,11 +10,10 @@ import java.util.List;
 public class CategoryController {
 
     @Autowired
-    private CategoryService categoriesService;
+    private CategoryService categoryService;
 
     @GetMapping("/categories")
-
     public List<CategoryDTO> getCategories() {
-        return categoriesService.getCategoriesDTO();
+        return categoryService.getCategories();
     }
 }

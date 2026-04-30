@@ -8,7 +8,7 @@ public class CategoryDTO {
     private String name;
     private List<ModelDTO> models;
 
-    public CategoryDTO(){
+    public CategoryDTO() {
 
     }
 

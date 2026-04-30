@@ -1,12 +1,11 @@
 package api.entity;
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table (name = "Linha")
-public class Line implements Serializable {
+public class Line {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,16 +28,8 @@ public class Line implements Serializable {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     @Override
@@ -50,7 +41,4 @@ public class Line implements Serializable {
         return categories;
     }
 
-    public void setCat(List<Category> categories) {
-        this.categories = categories;
-    }
 }

@@ -7,7 +7,7 @@ import api.service.LineService;
 import java.util.List;
 
 @RestController
-public class  LineController {
+public class LineController {
 
     @Autowired
     private LineService lineService;

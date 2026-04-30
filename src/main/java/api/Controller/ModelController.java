@@ -10,11 +10,10 @@ import java.util.List;
 public class ModelController {
 
     @Autowired
-    private ModelService modelsService;
+    private ModelService modelService;
 
     @GetMapping("/models")
-
     public List<ModelDTO> getModels() {
-        return modelsService.getModelDTO();
+        return modelService.getModels();
     }
 }

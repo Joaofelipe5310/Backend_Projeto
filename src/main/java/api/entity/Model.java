@@ -20,21 +20,10 @@ public class Model {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {return name;}
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public Category getCategories() {
         return categories;
     }
 
-    public void setCat(Category categories) {
-        this.categories = categories;
-    }
 }

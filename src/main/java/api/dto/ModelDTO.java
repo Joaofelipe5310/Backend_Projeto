@@ -5,7 +5,7 @@ public class ModelDTO {
     private int id;
     private String name;
 
-    public ModelDTO(){
+    public ModelDTO() {
 
     }
 

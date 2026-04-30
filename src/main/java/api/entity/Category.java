@@ -32,20 +32,9 @@ public class Category {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setLine(Line line) {
-        this.line = line;
     }
 
     public Line getLine() {return line;}
@@ -54,7 +43,4 @@ public class Category {
         return model;
     }
 
-    public void setModel(List<Model> model) {
-        this.model = model;
-    }
 }

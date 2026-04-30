@@ -8,7 +8,7 @@ public class LineDTO {
     private String name;
     private List<CategoryDTO> categories;
 
-    public LineDTO(){
+    public LineDTO() {
 
     }
 
@@ -16,10 +16,9 @@ public class LineDTO {
         this.id = id;
         this.name = name;
         this.categories = categories;
-
     }
 
-    public int getId(){return id; }
+    public int getId() {return id; }
 
     public String getName() { return name; }
 

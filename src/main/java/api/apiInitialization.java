@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DatabaseConnection {
+public class apiInitialization {
     public static void main(String[] args) {
 
-        SpringApplication.run(DatabaseConnection.class, args);
+        SpringApplication.run(apiInitialization.class, args);
     }
 }
