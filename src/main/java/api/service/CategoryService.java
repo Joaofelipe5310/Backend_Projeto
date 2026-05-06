@@ -18,19 +18,21 @@ public class CategoryService {
         this.repository = repository;
     }
 
-    public List<CategoryDTO> getCategories(){
+    public List<CategoryDTO> getCategories() {
 
         return repository.findAll().
                 stream().
-                map(u -> new CategoryDTO(
-                u.getId(),
-                u.getName(),
-                        u.getModel().stream().map(model -> new ModelDTO(
-                                model.getId(),
-                                model.getName()
-                        ))
-                          .collect(Collectors.toList())
-                ))
-                  .collect(Collectors.toList());
+                map(c -> new CategoryDTO.Builder()
+                        .id(c.getId())
+                        .name(c.getName())
+                        .models(c.getModel()
+                                .stream()
+                                .map(m -> new ModelDTO.Builder()
+                                .id(m.getId())
+                                        .name(m.getName())
+                                        .build())
+                                .collect(Collectors.toList()))
+                        .build())
+                .collect(Collectors.toList());
     }
 }

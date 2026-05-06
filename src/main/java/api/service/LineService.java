@@ -25,20 +25,21 @@ public class LineService {
 
         return repository.findAll()
                 .stream()
-                .map(l -> new LineDTO(
-                        l.getId(),
-                        l.getName(),
-                        l.getCategories().stream().map(c -> new CategoryDTO(
-                                c.getId(),
-                                c.getName(),
-                                c.getModel().stream().map(m -> new ModelDTO(
-                                        m.getId(),
-                                        m.getName()
-                                ))
-                                  .collect(Collectors.toList())
-                        ))
-                          .collect(Collectors.toList())
-                ))
-                  .collect(Collectors.toList());
+                .map(line -> new LineDTO.Builder()
+                        .id(line.getId())
+                        .name(line.getName())
+                        .categories(line.getCategories().stream().map(category -> new CategoryDTO.Builder()
+                                .id(category.getId())
+                                .name(category.getName())
+                                .models(category.getModel().stream().map(model -> new ModelDTO.Builder()
+                                        .id(model.getId())
+                                        .name(model.getName())
+                                        .build()
+                                ).collect(Collectors.toList()))
+                                .build()
+                        ).collect(Collectors.toList()))
+                        .build()
+                )
+                .collect(Collectors.toList());
     }
 }

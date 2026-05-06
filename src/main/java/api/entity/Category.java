@@ -1,4 +1,5 @@
 package api.entity;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +32,6 @@ public class Category {
     public int getId() {
         return id;
     }
-
 
     public String getName() {
         return name;

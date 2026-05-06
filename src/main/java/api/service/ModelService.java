@@ -19,10 +19,10 @@ public class ModelService {
     }
 
     public List<ModelDTO> getModels(){
-        return repository.findAll().stream().map(u -> new ModelDTO(
-                u.getId(),
-                u.getName()
-        ))
+        return repository.findAll().stream().map(m -> new ModelDTO.Builder()
+                        .id(m.getId())
+                        .name(m.getName())
+                        .build())
           .collect(Collectors.toList());
     }
 }
