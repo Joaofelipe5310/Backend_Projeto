@@ -16,6 +16,13 @@ public class Model {
     @JoinColumn(name = "Categoria_id")
     private Category categories;
 
+    public Model() {}
+
+    public Model(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public int getId() {
         return id;
     }

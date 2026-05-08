@@ -1,6 +1,7 @@
 package api.service;
 
 import api.dto.ModelDTO;
+import api.entity.Model;
 import api.repository.ModelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,8 +20,12 @@ public class ModelService {
     }
 
     public List<ModelDTO> getModels(){
-        return repository.findAll().stream().map(m -> new ModelDTO.Builder()
-                        .id(m.getId())
+
+        List<Model> model = repository.findByNameIsNotNull();
+
+        return model
+                .stream()
+                .map(m -> new ModelDTO.Builder()
                         .name(m.getName())
                         .build())
           .collect(Collectors.toList());

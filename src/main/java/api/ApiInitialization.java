@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class apiInitialization {
+public class ApiInitialization {
     public static void main(String[] args) {
 
-        SpringApplication.run(apiInitialization.class, args);
+        SpringApplication.run(ApiInitialization.class, args);
     }
 }
