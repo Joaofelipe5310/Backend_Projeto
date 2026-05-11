@@ -32,5 +32,4 @@ public class Model {
     public Category getCategories() {
         return categories;
     }
-
 }

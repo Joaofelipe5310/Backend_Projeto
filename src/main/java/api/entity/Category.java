@@ -42,5 +42,4 @@ public class Category {
     public List<Model> getModel() {
         return model;
     }
-
 }

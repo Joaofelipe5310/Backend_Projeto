@@ -56,5 +56,4 @@ public class CategoryDTO {
     public String toString() {
         return name;
     }
-
 }

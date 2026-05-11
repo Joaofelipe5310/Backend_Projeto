@@ -21,10 +21,11 @@ public class ModelService {
 
     public List<ModelDTO> getModels(){
 
-        List<Model> model = repository.findByNameIsNotNull();
+        List<Integer> ids = repository.findAllIds();
 
-        return model
-                .stream()
+        List<Model> model = repository.findAllById(ids);
+
+        return model.stream()
                 .map(m -> new ModelDTO.Builder()
                         .name(m.getName())
                         .build())

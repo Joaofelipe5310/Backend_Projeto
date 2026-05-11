@@ -6,12 +6,8 @@ import api.entity.Category;
 import api.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import api.service.ModelService;
 
 @Service
 public class CategoryService {
@@ -25,12 +21,12 @@ public class CategoryService {
 
     public List<CategoryDTO> getCategories() {
 
+        List<Integer> ids = repository.findAllIds();
 
-        List<Category> categories = repository.findByNameIsNotNull();
+        List<Category> categories = repository.findAllById(ids);
 
-             return categories.
-                     stream().
-                     map(c -> new CategoryDTO.Builder()
+             return categories.stream()
+                             .map(c -> new CategoryDTO.Builder()
                              .name(c.getName())
                              .models(c.getModel()
                                      .stream()
@@ -40,6 +36,5 @@ public class CategoryService {
                                      .collect(Collectors.toList()))
                              .build())
                      .collect(Collectors.toList());
-
     }
 }

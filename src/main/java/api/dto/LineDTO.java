@@ -4,7 +4,7 @@ import java.util.List;
 
 public class LineDTO {
 
-   private int id;
+   private static int id;
    private String name;
    private List<CategoryDTO> categories;
 
@@ -22,7 +22,7 @@ public class LineDTO {
        private String name;
        private List<CategoryDTO> categories;
 
-       public Builder id(int id) {
+       public Builder id() {
            this.id = id;
            return this;
        }
@@ -46,7 +46,6 @@ public class LineDTO {
        }
   }
 
-
     public int getId() {return id; }
 
     public String getName() { return name; }
@@ -57,5 +56,4 @@ public class LineDTO {
      public String toString() {
          return name;
      }
-
 }
