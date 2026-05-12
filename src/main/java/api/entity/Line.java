@@ -1,4 +1,4 @@
-package org.example;
+package api.entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -12,11 +12,11 @@ public class Line {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @JoinColumn(name = "name")
+    @Column(name = "name")
     private String name;
 
     @OneToMany(mappedBy = "line",cascade = CascadeType.ALL)
-    private List<Category> cat = new ArrayList<>();
+    private List<Category> categories = new ArrayList<>();
 
     public Line() {}
 
@@ -28,16 +28,9 @@ public class Line {
     public String getName() {
         return name;
     }
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     @Override
@@ -45,13 +38,7 @@ public class Line {
         return name;
     }
 
-    public List<Category> getCat() {
-        return cat;
-    }
-
-    public void setCat(List<Category> cat) {
-        this.cat = cat;
+    public List<Category> getCategories() {
+        return categories;
     }
 }
-
-
