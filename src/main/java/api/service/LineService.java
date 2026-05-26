@@ -14,12 +14,7 @@ import java.util.stream.Collectors;
 public class LineService {
 
     @Autowired
-    private final LineRepository repository;
-
-    public LineService(LineRepository repository) {
-
-        this.repository = repository;
-    }
+    LineRepository repository;
 
     public List<LineDTO> getLines() {
 

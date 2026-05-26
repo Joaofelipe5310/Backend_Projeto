@@ -32,4 +32,16 @@ public class Model {
     public Category getCategories() {
         return categories;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCategories(Category categories) {
+        this.categories = categories;
+    }
 }

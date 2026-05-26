@@ -10,7 +10,7 @@ import java.util.List;
 public class CategoryController {
 
     @Autowired
-    private CategoryService categoryService;
+    protected CategoryService categoryService;
 
     @GetMapping("/categories")
     public List<CategoryDTO> getCategories() {

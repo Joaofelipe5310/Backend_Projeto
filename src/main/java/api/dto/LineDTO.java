@@ -4,9 +4,9 @@ import java.util.List;
 
 public class LineDTO {
 
-   private static int id;
-   private String name;
-   private List<CategoryDTO> categories;
+   protected int id;
+   protected String name;
+   protected List<CategoryDTO> categories;
 
   public LineDTO() {
   }
@@ -18,11 +18,11 @@ public class LineDTO {
    }
 
     public static class Builder {
-      private int id;
-       private String name;
-       private List<CategoryDTO> categories;
+      protected int id;
+       protected String name;
+       protected List<CategoryDTO> categories;
 
-       public Builder id() {
+       public Builder id(int id) {
            this.id = id;
            return this;
        }
@@ -51,6 +51,18 @@ public class LineDTO {
     public String getName() { return name; }
 
     public List<CategoryDTO> getCategories() { return categories;}
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCategories(List<CategoryDTO> categories) {
+        this.categories = categories;
+    }
 
     @Override
      public String toString() {

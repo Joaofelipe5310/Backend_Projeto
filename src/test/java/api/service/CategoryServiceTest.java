@@ -1,35 +1,64 @@
 package api.service;
 
+import api.entity.Category;
+import api.entity.Model;
 import api.repository.CategoryRepository;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import api.repository.LineRepository;
-import org.junit.jupiter.api.Test;
-import static org.mockito.Mockito.mock;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.context.annotation.Bean;
-
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.*;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-@SpringBootTest
+@SpringBootTest(classes = CategoryService.class)
 public class CategoryServiceTest {
 
+    CategoryRepository repository;
+
+    CategoryService service;
+
+    @Before
+    public void setUp() {
+
+        repository = mock(CategoryRepository.class);
+
+        service = new CategoryService();
+
+        service.repository = repository;
+    }
+
     @Test
-    public void getCategories() {
-//        CategoryService categoryService = new CategoryService();
-//        CategoryRepository categoryRepository = new CategoryRepository();
-//        List<Integer>  categoryIds = new ArrayList<>();
-//        categoryIds.add(1);
-//        categoryIds.add(2);
-//        categoryIds.add(3);
-//        assertEquals(3, categoryIds.size());
+    public void getLinesTest() {
 
+        Model model = new Model();
+        model.setName("MODELO TESTE");
+        Model model2 = new Model();
+        model2.setName("MODELO TESTE 2");
+        Category category = new Category();
+        category.setId(1);
+        category.setName("CATEGORIA TESTE");
+        category.setModel(Collections.singletonList(model));
+        Category category2 = new Category();
+        category2.setId(2);
+        category2.setName("CATEGORIA TESTE 2");
+        category2.setModel(Collections.singletonList(model2));
+        List<Integer> idsfake = repository.findAllIds();
+        idsfake.add(1);
+        idsfake.add(2);
+        List<Category> categoriesfake = repository.findAllById(idsfake);
+        categoriesfake.add(category);
+        categoriesfake.add(category2);
 
+        when(repository.findAllIds()).thenReturn(idsfake);
+        when(repository.findAllById(idsfake)).thenReturn(categoriesfake);
+        repository.findAllIds();
+        repository.findAllById(idsfake);
+        service.getCategories();
+
+        assertEquals(categoriesfake.get(1).getName(), "CATEGORIA TESTE 2");
+        assertEquals(categoriesfake.get(0).getName(), "CATEGORIA TESTE");
+        assertEquals(categoriesfake.get(0).getModel().get(0).getName(), "MODELO TESTE");
     }
 
 }

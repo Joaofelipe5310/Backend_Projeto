@@ -42,4 +42,20 @@ public class Category {
     public List<Model> getModel() {
         return model;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLine(Line line) {
+        this.line = line;
+    }
+
+    public void setModel(List<Model> model) {
+        this.model = model;
+    }
 }

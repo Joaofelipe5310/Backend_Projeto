@@ -10,7 +10,7 @@ import java.util.List;
 public class ModelController {
 
     @Autowired
-    private ModelService modelService;
+    protected ModelService modelService;
 
     @GetMapping("/models")
     public List<ModelDTO> getModels() {

@@ -13,11 +13,7 @@ import java.util.stream.Collectors;
 public class CategoryService {
 
     @Autowired
-    private final CategoryRepository repository;
-
-    public CategoryService(CategoryRepository repository) {
-        this.repository = repository;
-    }
+    CategoryRepository repository;
 
     public List<CategoryDTO> getCategories() {
 

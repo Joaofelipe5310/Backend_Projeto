@@ -10,7 +10,7 @@ import java.util.List;
 public class LineController {
 
     @Autowired
-    private LineService lineService;
+    protected LineService lineService;
 
     @GetMapping("/lines")
     public List<LineDTO> getLines() {
