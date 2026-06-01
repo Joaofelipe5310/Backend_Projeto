@@ -8,25 +8,39 @@ import static org.junit.Assert.*;
 public class CategoryDTOTest {
 
     @Test
-    public void testConstructor() {
+    public void SettersGettersTest() {
 
-        int id = 1;
-        String name = "cattest";
-        List<ModelDTO> modelslist = new ArrayList<>();
-        ModelDTO model = new ModelDTO();
-        model.setId(1);
-        model.setName("modeltest");
-        ModelDTO model2 = new ModelDTO();
-        model.setId(2);
-        model.setName("modeltest2");
-        modelslist.add(model);
-        modelslist.add(model2);
+        CategoryDTO category = new CategoryDTO();
+        List<ModelDTO> models = new ArrayList<>();
+        category.setModels(models);
+        category.setName("categorytest");
+        category.setId(1);
 
-        CategoryDTO categorydto = new CategoryDTO.Builder().id(id).name(name).models(modelslist).build();
+        assertEquals(1, category.getId());
+        assertEquals("categorytest", category.getName());
+        assertEquals(models, category.getModels());
+    }
 
-        assertNotNull(categorydto);
-        assertEquals(id, categorydto.getId());
-        assertEquals(name, categorydto.getName());
-        assertEquals(modelslist, categorydto.getModels());
+    @Test
+    public void ToStringTest() {
+
+        CategoryDTO category = new CategoryDTO();
+        category.setName("categorytest");
+
+        assertEquals("categorytest", category.toString());
+    }
+
+    @Test
+    public void BuilderTest() {
+
+        List<ModelDTO> listmodels = new ArrayList<>();
+        listmodels.add(new ModelDTO());
+
+        CategoryDTO category = CategoryDTO.Builder.builder().id(1).name("categorybuilder").models(listmodels).build();
+
+        assertEquals(1, category.getId());
+        assertEquals("categorybuilder", category.getName());
+        assertEquals(ModelDTO.class, category.getModels().get(0).getClass());
+
     }
 }
