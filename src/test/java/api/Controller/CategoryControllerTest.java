@@ -3,6 +3,7 @@ package api.Controller;
 import api.dto.CategoryDTO;
 import api.dto.ModelDTO;
 import api.service.CategoryService;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,17 +22,20 @@ public class CategoryControllerTest {
 
     @Before
     public void setUp() {
-
         service = mock(CategoryService.class);
-
         controller = new CategoryController();
 
         controller.categoryService = service;
     }
 
+    @After
+    public void tearDown() {
+        controller = null;
+        service = null;
+    }
+
     @Test
     public void getCategoryTest() {
-
         ModelDTO model = new ModelDTO();
         model.setName("MODELO TESTE");
         ModelDTO model2 = new ModelDTO();
@@ -47,8 +51,7 @@ public class CategoryControllerTest {
         fakecategory.add(category2);
 
         when(service.getCategories()).thenReturn(fakecategory);
-        controller.getCategories();
 
-        assertEquals(fakecategory.toString(), service.getCategories().toString());
+        assertEquals(fakecategory.toString(), controller.getCategories().toString());
     }
 }

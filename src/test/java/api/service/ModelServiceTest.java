@@ -18,9 +18,7 @@ public class ModelServiceTest {
 
     @Before
     public void setUp() {
-
         repository = mock(ModelRepository.class);
-
         service = new ModelService();
 
         service.repository = repository;
@@ -28,13 +26,14 @@ public class ModelServiceTest {
 
     @Test
     public void getLinesTest() {
-
         Model model = new Model();
+        Model model2 = new Model();
+
         model.setId(1);
         model.setName("MODELO TESTE");
-        Model model2 = new Model();
         model2.setId(2);
         model2.setName("MODELO TESTE 2");
+
         List<Integer> idsfake = repository.findAllIds();
         idsfake.add(1);
         idsfake.add(2);
@@ -44,11 +43,8 @@ public class ModelServiceTest {
 
         when(repository.findAllIds()).thenReturn(idsfake);
         when(repository.findAllById(idsfake)).thenReturn(modelsfake);
-        repository.findAllIds();
-        repository.findAllById(idsfake);
-        service.getModels();
 
-        assertEquals(modelsfake.get(1).getName(), "MODELO TESTE 2");
-        assertEquals(modelsfake.get(0).getName(), "MODELO TESTE");
+        assertEquals("MODELO TESTE", service.getModels().get(0).getName());
+        assertEquals("MODELO TESTE 2", service.getModels().get(1).getName());
     }
 }

@@ -18,7 +18,7 @@ public class LineDTO {
    }
 
     public static class Builder {
-      protected int id;
+       protected int id;
        protected String name;
        protected List<CategoryDTO> categories;
 

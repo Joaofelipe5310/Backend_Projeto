@@ -4,6 +4,7 @@ import api.dto.CategoryDTO;
 import api.dto.LineDTO;
 import api.dto.ModelDTO;
 import api.service.LineService;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,18 +23,21 @@ public class LineControllerTest {
 
     @Before
     public void setUp() {
-
         service = mock(LineService.class);
 
         controller = new LineController();
 
         controller.lineService = service;
+    }
 
+    @After
+    public void tearDown() {
+        controller = null;
+        service = null;
     }
 
     @Test
     public void getLinesSucessTest() {
-
         ModelDTO model = new ModelDTO();
         model.setName("MODELO TESTE");
         ModelDTO model2 = new ModelDTO();
@@ -55,9 +59,7 @@ public class LineControllerTest {
         fakelines.add(line2);
 
         when(service.getLines()).thenReturn(fakelines);
-        controller.getLines();
 
-        assertEquals(fakelines.toString(), service.getLines().toString());
-
+        assertEquals(fakelines.toString(), controller.getLines().toString());
     }
 }

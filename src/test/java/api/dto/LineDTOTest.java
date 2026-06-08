@@ -1,5 +1,6 @@
 package api.dto;
 
+import org.junit.Before;
 import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,36 +8,68 @@ import static org.junit.Assert.*;
 
 public class LineDTOTest {
 
-    @Test
-    public void SettersGettersTest() {
+    LineDTO line;
+    List<CategoryDTO> categories;
 
-        LineDTO line = new LineDTO();
-        List<CategoryDTO> categories = new ArrayList<>();
+    @Before
+    public void setUp() {
+        line = new LineDTO();
+        categories = new ArrayList<>();
+    }
+
+    @Test
+    public void setIdTest() {
         line.setId(1);
-        line.setName("linetest");
-        line.setCategories(categories);
 
         assertEquals(1, line.getId());
-        assertEquals("linetest", line.getName());
+    }
+
+    @Test
+    public void getIdTest() {
+        line.setId(2);
+
+        assertEquals(2, line.getId());
+    }
+
+    @Test
+    public void setNameTest() {
+        line.setName("setLineTest");
+
+        assertEquals("setLineTest", line.getName());
+    }
+
+    @Test
+    public void getNameTest() {
+        line.setName("getLineTest");
+
+        assertEquals("getLineTest", line.getName());
+    }
+
+    @Test
+    public void setCategoriesTest() {
+        line.setCategories(categories);
+
         assertEquals(categories, line.getCategories());
     }
 
     @Test
-    public void ToStringTest() {
+    public void getCategoriesTest() {
+        line.setCategories(categories);
 
-        LineDTO line = new LineDTO();
-        line.setName("linetest");
-
-        assertEquals("linetest", line.toString());
+        assertEquals(categories, line.getCategories());
     }
 
     @Test
-    public void BuilderTest() {
+    public void toStringTest() {
+        line.setName("lineTest");
 
-        List<CategoryDTO> listcategories = new ArrayList<>();
-        listcategories.add(new CategoryDTO());
+        assertEquals("lineTest", line.toString());
+    }
 
-        LineDTO line = LineDTO.Builder.builder().id(1).name("linebuilder").categories(listcategories).build();
+    @Test
+    public void builderTest() {
+        categories.add(new CategoryDTO());
+        LineDTO line = LineDTO.Builder.builder().id(1).name("linebuilder").categories(categories).build();
 
         assertEquals(1, line.getId());
         assertEquals("linebuilder", line.getName());

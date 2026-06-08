@@ -2,6 +2,7 @@ package api.Controller;
 
 import api.dto.ModelDTO;
 import api.service.ModelService;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,12 +20,16 @@ public class ModelControllerTest {
 
     @Before
     public void setUp() {
-
         service = mock(ModelService.class);
-
         controller = new ModelController();
 
         controller.modelService = service;
+    }
+
+    @After
+    public void tearDown() {
+        controller = null;
+        service = null;
     }
 
     @Test
@@ -40,9 +45,7 @@ public class ModelControllerTest {
         fakemodels.add(model2);
 
         when(service.getModels()).thenReturn(fakemodels);
-        controller.getModels();
 
-        assertEquals(fakemodels.toString(), service.getModels().toString());
-
+        assertEquals(fakemodels.toString(), controller.getModels().toString());
     }
 }
