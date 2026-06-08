@@ -13,11 +13,7 @@ import java.util.stream.Collectors;
 public class ModelService {
 
     @Autowired
-    private final ModelRepository repository;
-
-    public ModelService(ModelRepository repository) {
-        this.repository = repository;
-    }
+    ModelRepository repository;
 
     public List<ModelDTO> getModels(){
 

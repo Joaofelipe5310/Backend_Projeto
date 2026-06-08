@@ -52,6 +52,18 @@ public class CategoryDTO {
 
     public List<ModelDTO> getModels() { return models; }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setModels(List<ModelDTO> models) {
+        this.models = models;
+    }
+
     @Override
     public String toString() {
         return name;
